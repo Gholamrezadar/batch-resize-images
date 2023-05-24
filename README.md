@@ -10,7 +10,6 @@ Have a directory of images named 'images' and a directory named 'resized_images'
 
 ```txt
 parent/
-|
 |___ images/
      |___ image1.jpg
      |___ image2.jpg
