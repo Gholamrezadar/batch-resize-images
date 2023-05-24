@@ -11,12 +11,12 @@ Have a directory of images named 'images' and a directory named 'resized_images'
 ```txt
 parent/
 |
-|--- images/
-     | image1.jpg
-     | image2.jpg
-     | etc
-|--- resized_images/
-|--- resize_images.py
+|___ images/
+     |___ image1.jpg
+     |___ image2.jpg
+     |___ etc
+|___ resized_images/
+|___ resize_images.py
 ```
 
 ## Requirements
