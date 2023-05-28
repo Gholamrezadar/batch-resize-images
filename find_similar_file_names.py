@@ -1,4 +1,5 @@
-# Give it to folders, It will find the files that are not in the first folder but in the second folder.
+# Give it two folders, It will find the files that are not
+# in the first folder but in the second folder.
 
 from pathlib import Path
 from collections import Counter

@@ -1,5 +1,6 @@
-images/*.jpg
-resized_images/*.jpg
-double_resized/
-triple_resized/
+images/**/*.jpg
+resized_images/**/*.jpg
+double_resized/**/*.jpg
+triple_resized/**/*.jpg
 *.png
+*.jpg
