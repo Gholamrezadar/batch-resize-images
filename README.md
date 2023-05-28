@@ -1,5 +1,9 @@
 # Batch Resize Images
 
+Do you have a bunch of images dumped in a hard drive that you want to resize to a smaller size? This script is for you.
+
+![demo gif](batch-resize-demo.gif)
+
 ## Description
 
 A simple python script that uses PIL and joblib to resize images in a directory to a specified fraction.
