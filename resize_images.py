@@ -49,14 +49,13 @@ def resize_image(image_path, src_path, dest_path, percent, min_width, debug=True
     new_size = (width, height)
 
     # Skipping images with width less than min_width
-    if max(width, height) < min_width:
+    resized_image = image 
+    if max(width, height) >= min_width:
+        resized_image = image.resize(new_size)
+    else:
         if debug:
             print(f"> Skipping {image_path.name} because it's longer side is less than {min_width}px")
-        return
-
-    # Resize the image
-    resized_image = image.resize(new_size)
-
+        
     # Create any needed subdir in dest_path(get from image_path.relative_to)
     if not pathlib.Path(dest_path / image_path.relative_to(src_path).parent).exists():
         pathlib.Path(dest_path / image_path.relative_to(src_path).parent).mkdir(parents=True, exist_ok=True)
