@@ -131,7 +131,7 @@ if __name__ == "__main__":
     
     # Check if the resized_images folder exists, otherwise create it
     if not pathlib.Path(DEST_FOLDER).exists():
-        if DEBUG:
+        if DEBUG or True:
             print(f"{DEST_FOLDER} doesn't exist. Creating the '{DEST_FOLDER}' folder...")
         pathlib.Path(DEST_FOLDER).mkdir(parents=True)
 
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     start_time = time.perf_counter_ns()
 
     # Print some info
-    if DEBUG:
+    if DEBUG or True:
         print(f"> Number of images: {images_count}")
         print(f"> Results will be saved in the '{DEST_FOLDER}' folder")
         print(f"\n> Resizing images in parallel using {args.jobs} jobs...")
@@ -158,13 +158,13 @@ if __name__ == "__main__":
         resize_image(image_path, path, result_path, PERCENT, MIN_WIDTH, DEBUG, QUALITY)
     
     # Resize all the images in parallel
-    Parallel(n_jobs=JOBS)(delayed(resize_image_wrapper)(image_path) for image_path in images)
+    Parallel(n_jobs=JOBS, verbose=6)(delayed(resize_image_wrapper)(image_path) for image_path in images)
 
     # Stop the timer
     end_time = time.perf_counter_ns()
 
     # Print some info
-    if DEBUG:
+    if DEBUG or True:
         result_images_count = len([p for p in result_path.glob('**/*') if p.suffix in EXTENSION_SET])
         result_images_size = sum([p.stat().st_size for p in result_path.glob('**/*') if p.suffix in EXTENSION_SET])
 
