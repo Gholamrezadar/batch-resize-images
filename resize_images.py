@@ -76,7 +76,7 @@ def human_readable_time(time_in_ns: int) -> str:
     
     # if time is less than 60 minutes display in minutes and remainder seconds
     if time_in_seconds < 3600:
-        return f"{time_in_seconds // 60:.0f} minutes and {time_in_seconds % 60:d} seconds"
+        return f"{time_in_seconds // 60:.0f} minutes and {time_in_seconds % 60:.0f} seconds"
     
     # if time is less than 24 hours display in hours and remainder minutes
     if time_in_seconds < 86400:
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     MIN_WIDTH: int = args.min_width
     DEBUG: bool = args.debug
     QUALITY: int = args.quality
-    EXTENSION_SET: set = {'.jpg', '.jpeg', '.png', 'JPG', 'JPEG', 'PNG'}
+    EXTENSION_SET: set = {'.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'}
 
     # Make sure the percentage is between 0 and 1
     if PERCENT <= 0 or PERCENT > 1:
@@ -173,4 +173,6 @@ if __name__ == "__main__":
         print()
         print(f"> Source: {images_count} images, {images_size / 1e6:.2f} MB")
         print(f"> Result: {result_images_count} images, {result_images_size / 1e6:.2f} MB ({result_images_size / images_size * 100:.2f}%)")
-        print(f"> {images_count - result_images_count} images were skipped because their longer side was less than {MIN_WIDTH}px" )
+        
+        # This is wrong:
+        # print(f"> {images_count - result_images_count} images were skipped because their longer side was less than {MIN_WIDTH}px" )
