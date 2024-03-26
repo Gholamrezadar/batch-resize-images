@@ -1,3 +1,8 @@
+## NOTE ##
+# DO NOT USE THIS FILE
+# USE 'resize_images.py'
+# THIS FILE WAS ONLY USED FOR DEBUGGING
+
 # Gholamreza Dar May 2023
 # Resize all the images in the 'images' folder and save them in the 'resized_images' folder
 # Supports parallel resizing of images
